@@ -16,4 +16,11 @@ install: nc
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	install -m 755 mplc $(DESTDIR)$(PREFIX)/bin/mplc
 
+.PHONY: rpm
+rpm:
+	make clean && make -f Makefile.stdlib clean
+	tar -C .. -cvjf /usr/src/redhat/SOURCES/mpl.tar.bz2 mpl
+	cp -f mpl.spec /usr/src/redhat/SPECS
+	rpmbuild -ba /usr/src/redhat/SPECS/mpl.spec
+
 include $(OCAMLMAKEFILE)
