@@ -3,9 +3,9 @@
 OCAMLMAKEFILE = OCamlMakefile
  
 SOURCES = mpl_stdlib.mli mpl_stdlib.ml
-RESULT = test
+RESULT = mpl_stdlib
 LIBS = unix str
-all: nc
+all: ncl bcl
 run: all
 	./${RESULT}.top
 
