@@ -6,7 +6,7 @@ Version: 0
 Release: 1
 Group:   Development/Tools/OCaml
 License: BSD
-URL:  http://githib.com/avsm/mpl
+URL:  http://github.com/avsm/mpl
 Source0: mpl.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
