@@ -1,12 +1,23 @@
 # $Id: Makefile.stdlib,v 1.3 2005/12/02 13:03:42 djs Exp $
 
-OCAMLMAKEFILE = ../OCamlMakefile
+OCAMLMAKEFILE = OCamlMakefile
  
 SOURCES = mpl_stdlib.mli mpl_stdlib.ml
 RESULT = test
 LIBS = unix str
-all: test.top
+all: nc
 run: all
 	./${RESULT}.top
 
+.PHONY: install
+install: path = $(DESTDIR)$(shell ocamlfind printconf destdir)
+install: bc nc META
+	mkdir -p $(path)
+	ocamlfind install -destdir $(path) -ldconf ignore mpl mpl_stdlib.cmo mpl_stdlib.cmi mpl_stdlib.cmx META
+
+.PHONY: uninstall
+uninstall:
+	ocamlfind remove mpl
+
 include $(OCAMLMAKEFILE)
+

@@ -1,0 +1,5 @@
+version = "0.1"
+description = "MPL: a compiler which accepts succinct binary packet descriptions and outputs fast, type-safe Ocaml interfaces and modules to marshal and unmarshal packets of this type."
+requires = "unix str"
+archive(byte) = "mpl_stdlib.cmo"
+archive(native) = "mpl_stdlib.cmx"
