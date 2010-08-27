@@ -1,0 +1,15 @@
+MPL is a compiler which accepts succinct binary packet descriptions
+and outputs fast, type-safe OCaml interfaces and modules to marshal and
+unmarshal packets of this type.
+
+It is primarily aimed at binary low-level protocols such as IP, TCP or
+Ethernet, and C structure marshalling.
+
+For more information, please see:
+http://anil.recoil.org/papers/2007-eurosys-melange.pdf
+
+If you use this, citation information is at:
+http://portal.acm.org/citation.cfm?id=1272998.1273009
+
+--
+Anil Madhavapeddy <anil@recoil.org>
