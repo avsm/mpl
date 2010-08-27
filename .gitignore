@@ -1,0 +1,15 @@
+*.cmx
+*.cma
+*.cmo
+*.o
+*.a
+*.cmi
+._d/
+._bcdi/
+._ncdi/
+mpl_lexer.ml
+mpl_parser.ml
+mpl_parser.mli
+mplc
+
+
