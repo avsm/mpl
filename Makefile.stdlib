@@ -1,0 +1,12 @@
+# $Id: Makefile.stdlib,v 1.3 2005/12/02 13:03:42 djs Exp $
+
+OCAMLMAKEFILE = ../OCamlMakefile
+ 
+SOURCES = mpl_stdlib.mli mpl_stdlib.ml
+RESULT = test
+LIBS = unix str
+all: test.top
+run: all
+	./${RESULT}.top
+
+include $(OCAMLMAKEFILE)
