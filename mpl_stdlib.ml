@@ -132,6 +132,13 @@ let env_at env off sz =
 let env_pos env pos = {env with __bpos = pos}
 let env_fn env fn = fn env.__bbuf (env.__bbase + env.__bpos) env.__bsz
 
+let fold_env env blocksize f initial =
+  let rec fold pos acc = 
+    if pos < env.__bsz
+    then fold (pos + blocksize) (f (env_at env pos blocksize) acc)
+    else acc in
+  fold 0 initial
+
 let remaining env = assert (env.__bpos <= env.__bsz); env.__bsz - env.__bpos
 
 

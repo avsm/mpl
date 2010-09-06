@@ -47,6 +47,11 @@ val curbase : env -> int
 val env_at : env -> int -> int -> env
 val env_pos : env -> int -> env
 val env_fn : env -> (string -> int -> int -> 'a) -> 'a
+
+(** [fold_env env blocksize f] folds [f] over contiguous sub-environments
+    built from [env] with size [blocksize] *)
+val fold_env : env -> int -> (env -> 'a -> 'a) -> 'a -> 'a
+
 val remaining : env -> int
 val flush : env -> Unix.file_descr -> unit
 val sendto : env -> Unix.file_descr -> Unix.sockaddr -> unit
@@ -169,3 +174,4 @@ module Mpl_mpint :
     val bytes : t -> int
     val bits : t -> int
   end
+
