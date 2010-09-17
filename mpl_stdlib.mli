@@ -49,8 +49,8 @@ val env_pos : env -> int -> env
 val env_fn : env -> (string -> int -> int -> 'a) -> 'a
 
 (** [fold_env env blocksize f] folds [f] over contiguous sub-environments
-    built from [env] with size [blocksize] *)
-val fold_env : env -> int -> (env -> 'a -> 'a) -> 'a -> 'a
+    built from [env] with arbitrary sizes *)
+val fold_env : env -> (env -> 'a -> 'a) -> 'a -> 'a
 
 val remaining : env -> int
 val flush : env -> Unix.file_descr -> unit
