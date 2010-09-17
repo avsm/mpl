@@ -39,4 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/ocaml/mpl/mpl_stdlib.cmx
 /usr/lib/ocaml/mpl/mpl_stdlib.cmo
 /usr/lib/ocaml/mpl/mpl_stdlib.cmi
+/usr/lib/ocaml/mpl/mpl_stdlib.o
 /usr/lib/ocaml/mpl/META
