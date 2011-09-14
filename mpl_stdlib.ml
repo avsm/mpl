@@ -134,6 +134,16 @@ let env_fn env fn = fn env.__bbuf (env.__bbase + env.__bpos) env.__bsz
 
 let remaining env = assert (env.__bpos <= env.__bsz); env.__bsz - env.__bpos
 
+let fold_env env f initial = 
+	let rec fold acc = 
+		if remaining env <= 0
+		then acc
+		else 
+			let env' = env_at env (curpos env) (size env) in
+			let acc' = f env' acc in
+			skip env (curpos env');
+			fold acc' in
+	fold initial
 
 (* Flush the environment to the file descriptor *)
 let flush env fd = ignore (Unix.single_write fd env.__bbuf 0 !(env.__blen))
