@@ -13,7 +13,7 @@ run: all
 install: path = $(DESTDIR)$(shell ocamlfind printconf destdir)
 install: bc nc META
 	mkdir -p $(path)
-	ocamlfind install -destdir $(path) -ldconf ignore mpl mpl_stdlib.cmo mpl_stdlib.cmi mpl_stdlib.cmx META
+	ocamlfind install -destdir $(path) -ldconf ignore mpl mpl_stdlib.cmo mpl_stdlib.cmi mpl_stdlib.cmx mpl_stdlib.o META
 
 .PHONY: uninstall
 uninstall:
